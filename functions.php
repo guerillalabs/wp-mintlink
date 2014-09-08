@@ -43,6 +43,11 @@ function mintlink_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'mintlink' ),
+		'footer' => __( 'Footer Menu', 'mintlink' ),
+		'section' => __( 'Section Menu', 'mintlink' ),
+		'solutions' => __( 'Solutions Menu', 'mintlink' ),
+		'industries' => __( 'Industries Menu', 'mintlink' ),
+		'contact' => __( 'Contact Menu', 'mintlink' )
 	) );
 
 	/*
@@ -88,8 +93,17 @@ add_action( 'admin_menu', 'remove_menus' );
  */
 function mintlink_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'mintlink' ),
-		'id'            => 'sidebar-1',
+		'name'          => __( 'Solutions', 'mintlink' ),
+		'id'            => 'sidebar-solutions',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Industries', 'mintlink' ),
+		'id'            => 'sidebar-industries',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
