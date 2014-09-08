@@ -70,6 +70,17 @@ function mintlink_setup() {
 endif; // mintlink_setup
 add_action( 'after_setup_theme', 'mintlink_setup' );
 
+
+
+// Remove unused links from the Admin menu.
+function remove_menus(){
+  remove_menu_page( 'edit.php' );                   //Posts
+  remove_menu_page( 'edit-comments.php' );          //Comments
+}
+add_action( 'admin_menu', 'remove_menus' );
+
+
+
 /**
  * Register widget area.
  *
