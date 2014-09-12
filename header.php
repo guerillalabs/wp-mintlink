@@ -39,7 +39,7 @@
 </head>
 <body <?php body_class(); ?>>
 
-<!-- nav goes here -->
+<!-- nav goes here. -->
 
 <div class="page-frame js-page-frame" id="top">
 
