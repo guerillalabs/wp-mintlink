@@ -1,0 +1,80 @@
+//
+//   @fade-in
+// ---------------------------------------------------------
+//  _4_modules/_fade-in.scss
+// ---------------------------------------------------------
+//
+//  All the class for fading/animating in elements as
+//  you scroll
+//
+// ---------------------------------------------------------
+
+
+.js {
+    .faded {
+        opacity: 0;
+    }
+
+    .faded-out {
+        opacity: 0;
+        transform: translate3d(0, 20px, 0);
+    }
+    .fade-in {
+        transition: all 1s ease-in-out;
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+
+    .faded-out-left {
+        opacity: 0;
+        transform: translate3d(-20px, 0, 0);
+    }
+    .fade-in-left {
+        transition: all 1s ease-in-out;
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+
+    .faded-out-right {
+        opacity: 0;
+        transform: translate3d(20px, 0, 0);
+    }
+    .fade-in-right {
+        transition: all 1s ease-in-out;
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+
+.js.lte-ie9 .faded, .js.lte-ie9 .faded-out, .js.lte-ie9 .faded-out-left, .js.lte-ie9 .faded-out-right {
+    // no fading for IE8 & 9 and small devices
+    opacity: 1;
+}
+
+.js .faded, .js .faded-out, .js .faded-out-left, .js .faded-out-right {
+    @include media('screen and #{map-get($breakpoints-max, "small")}', $no-query-fallback: false) {
+        opacity: 1;
+        transition: none;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.fadeInRight {
+    animation-duration: 1s;
+    animation-name: fadeInRight;
+}
+

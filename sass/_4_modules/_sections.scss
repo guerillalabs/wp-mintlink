@@ -1,0 +1,146 @@
+//
+//   @sections
+// --------------------------------------------------------
+//  _4_modules/_sections.scss
+// --------------------------------------------------------
+//
+//  Sections - yeah...they're sections
+//
+// --------------------------------------------------------
+
+
+
+//   @section--full
+// --------------------------------------------------------
+//  Section full
+//  Full width section with text centered and
+//  large top and bottom padding
+// --------------------------------------------------------
+.section--full {
+    @extend %clearfix;
+
+    padding: 100px 25px 110px;
+}
+
+.section--full__inner {
+    margin: 0 auto;
+    max-width: 800px;
+    text-align: center;
+}
+
+.section--full__inner-wide {
+    margin: 0 auto;
+    max-width: 970px;
+}
+
+.section--full__heading {
+    @extend %ps--12--light-grey--all-caps;
+
+    margin-bottom: 20px;
+}
+
+.section--full__tagline {
+    @extend %psl--32--green;
+
+    margin-bottom: 20px;
+}
+
+.section--full__desc {
+    @extend %psl--18--grey;
+}
+
+.section--full--green-bg {
+    background-color: color('green');
+
+    .section--full__heading,
+    .section--full__tagline,
+    .section--full__desc {
+        color: color('white');
+    }
+}
+
+
+.section--full--grey-bg {
+    background-color: #f8f8f9;
+}
+
+
+.section-int__text {
+    text-align: left;
+
+    @include media('screen and #{map-get($breakpoints, "medium")}', $no-query-fallback: true){
+        float: left;
+        max-width: percent(468, 970);
+    }
+}
+.section-int__text--alt {
+    @include media('screen and #{map-get($breakpoints, "medium")}', $no-query-fallback: true){
+        float: right;
+    }
+}
+
+
+.section-int__img > img {
+    display: block;
+    margin: 25px auto 0;
+}
+
+.section-int__img {
+    @include media('screen and #{map-get($breakpoints, "medium")}', $no-query-fallback: true){
+        overflow: hidden;
+
+        > img {
+            float: right;
+        }
+    }
+}
+.section-int__img--alt > img {
+    @include media('screen and #{map-get($breakpoints, "medium")}', $no-query-fallback: true){
+        float: left;
+    }
+}
+
+.section--centered {
+    @extend %clearfix;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 100px 25px 110px;
+    text-align: center;
+}
+
+.section--centered--wide {
+    max-width: 1000px;
+}
+
+
+
+.section--full--border {
+    border-top: 1px solid #bcbdbd;
+}
+.section--full--border--bottom {
+    border-bottom: 1px solid #bcbdbd;
+}
+
+
+
+.section-int__headline {
+    @extend %psb--32--green;
+
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+.section-int__desc {
+    @extend %psl--18--grey;
+
+    margin-bottom: 40px;
+}
+
+.section-int__list {
+    @extend %psl--16--grey;
+
+    list-style: disc;
+    margin-left: 20px;
+}
+
+
+

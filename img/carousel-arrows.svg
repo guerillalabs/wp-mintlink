@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="96px" height="223px" viewBox="0 0 96 223" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.4 (8054) - http://www.bohemiancoding.com/sketch -->
+    <title>carousel-arrows</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="carousel-arrows" sketch:type="MSLayerGroup">
+            <g id="arrow-right" sketch:type="MSShapeGroup">
+                <path d="M0,212 L11,200 L13,202 L4,212 L13,221 L11,223 L0,212 Z" id="arrow-right-green" fill="#28B67A" transform="translate(6.500000, 211.500000) rotate(-180.000000) translate(-6.500000, -211.500000) "></path>
+                <path d="M0,12 L11,0 L13,2 L4,12 L13,21 L11,23 L0,12 Z" fill="#FFFFFF" transform="translate(6.500000, 11.500000) rotate(-180.000000) translate(-6.500000, -11.500000) "></path>
+            </g>
+            <g id="arrow-left" transform="translate(83.000000, 0.000000)" sketch:type="MSShapeGroup">
+                <path d="M0,212 L11,200 L13,202 L4,212 L13,221 L11,223 L0,212 Z" id="arrow-left-green" fill="#28B67A"></path>
+                <path d="M0,12 L11,0 L13,2 L4,12 L13,21 L11,23 L0,12 Z" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,233 @@
+//
+//   @variables
+// ---------------------------------------------------------
+//  _1_foundation/_vars.scss
+// ---------------------------------------------------------
+//
+//  Global variables are defined here
+//
+// ---------------------------------------------------------
+
+
+
+
+// --------------------------------------------------------
+//
+//  URLs
+//
+//  set the base url of the site (helpful for switching
+//  between server environments)
+//
+// --------------------------------------------------------
+
+$baseurl: '../' !default; // typically '/' or '../'
+
+
+
+
+// --------------------------------------------------------
+//
+//  Dimensions
+//
+// --------------------------------------------------------
+
+$base-font-size         : 18;
+$base-line-height       : 27 / $base-font-size;
+
+$vertical-rhythm        : $base-font-size / 2;  // should equal a whole number
+$vertical-unit          : rem($vertical-rhythm);
+
+$spacing-xxl            : modular-scale(rem($vertical-rhythm), 4, 1.618);  // 62
+$spacing-xl             : modular-scale(rem($vertical-rhythm), 3, 1.618);  // 38
+$spacing-l              : modular-scale(rem($vertical-rhythm), 2, 1.618);  // 24
+$spacing-m              : modular-scale(rem($vertical-rhythm), 1, 1.618);  // 15
+$spacing-s              : modular-scale(rem($vertical-rhythm), 0, 1.618);  // 9
+$spacing-xs             : modular-scale(rem($vertical-rhythm), -1, 1.618); // 6
+$spacing-xxs            : modular-scale(rem($vertical-rhythm), -2, 1.618); // 3
+
+// breakpoints - should always be based off of a 16px base
+$bp-xl                  : em(1280,16);
+$bp-l                   : em(960,16);
+$bp-m                   : em(769,16);
+$bp-s                   : em(481,16);
+$bp-xs                  : em(480,16);
+
+$maxwidth               : em(970);
+
+
+
+
+// --------------------------------------------------------
+//
+//  Typography
+//
+// --------------------------------------------------------
+
+.text-xxl,
+%text-xxl {
+  font-size: modular-scale(em($base-font-size),  2, 1.333);
+  line-height: 1.25;
+  @include media('(min-width: #{$bp-s})') {
+    font-size: modular-scale(em($base-font-size),  3, 1.333);
+    line-height: 1.125;
+  }
+}
+
+.text-xl,
+%text-xl {
+  font-size: modular-scale(em($base-font-size),  1, 1.333);
+  line-height: 1.3333333333;
+  @include media('(min-width: #{$bp-s})') {
+    font-size: modular-scale(em($base-font-size),  2, 1.333);
+    line-height: 1.25;
+  }
+}
+
+.text-l,
+%text-l {
+  font-size: modular-scale(em($base-font-size),  0, 1.333);
+  line-height: $base-line-height;
+  @include media('(min-width: #{$bp-s})') {
+    font-size: modular-scale(em($base-font-size),  1, 1.333);
+    line-height: 1.3333333333;
+  }
+}
+
+.text-m,
+%text-m {
+  font-size: modular-scale(em($base-font-size),  -1, 1.333);
+  line-height: 1.7142857143;
+  @include media('(min-width: #{$bp-s})') {
+    font-size: modular-scale(em($base-font-size),  0, 1.333);
+    line-height: $base-line-height;
+  }
+}
+
+.text-s,
+%text-s {
+  font-size: modular-scale(em($base-font-size),  -2, 1.333);
+  line-height: 2;
+  @include media('(min-width: #{$bp-s})') {
+    font-size: modular-scale(em($base-font-size),  -1, 1.333);
+    line-height: 1.7142857143;
+  }
+}
+
+.text-xs,
+%text-xs {
+  font-size: modular-scale(em($base-font-size),  -2, 1.333);
+  line-height: 2;
+}
+
+
+
+
+// --------------------------------------------------------
+//
+//  Grid Settings
+//
+//  These variables are explained in greater detail in
+//  _2_layout/_grids.scss
+//
+// --------------------------------------------------------
+
+$gutter:                $spacing-l;
+
+$use-silent-classes:    false;
+$push:                  false;
+$pull:                  false;
+
+$breakpoints: (
+    'medium' : '(min-width: #{$bp-m})',
+    'large'  : '(min-width: #{$bp-l})',
+    'wide'   : '(min-width: #{$bp-xl})'
+);
+// max-width breakpoints for use in _2_layout/_hide.scss
+// an inverse of the above (minus 1 pixel) should be good
+$breakpoints-max: (
+    'small'  : '(max-width: #{$bp-xs})',
+    'medium' : '(max-width: #{$bp-l - em(1,16)})',
+    'large'  : '(max-width: #{$bp-xl - em(1,16)})'
+);
+
+$breakpoint-has-widths: ('medium', 'large', 'wide');
+$breakpoint-has-push:   ('medium', 'large', 'wide');
+$breakpoint-has-pull:   ('medium', 'large', 'wide');
+
+
+
+
+// --------------------------------------------------------
+//
+//  Colors
+//
+//  We use real color names here.  Although naming something
+//  like 'brand' is in fact more generic and reusable, we've
+//  found that you end up creating variables like $brand-2,
+//  $brand-alt, $brand-complimentary etc.  While coding,
+//  it's too easy to forget what those mean.
+//
+//  If the design changes drastically and the brand changes
+//  from, let's say, blue to green, just do a global
+//  find/replace - that's what text editors are for.
+//
+//  Base colors from http://clrs.cc
+//
+// --------------------------------------------------------
+
+// return these colors with a map-get in Sass. Ex. map-get($colors, 'aqua')
+// there is also a function to return these colors quickly. Ex. color('aqua')
+$colors: (
+  'green'       : #28b67a,
+  'light-green' : #b8dfca,
+
+
+  'grey'        : #818282,
+  'light-grey'  : #b0b1b2,
+  'dark-grey'   : #40474f,
+
+
+  'white'       : #fff,
+  'black'       : #111,
+);
+
+
+
+
+
+// Assign colors to roles
+$body-color               : color('white');
+$text-color               : color('black');
+
+// Now define another set of colors. These will be used to style alerts, inputs and buttons
+$placeholder-txt          : #8b8a8f;
+
+$error-bg                 : #ffe6e6;
+$error-txt                : #e04646;
+$error-border             : #e04646;
+
+$warning-bg               : #fcf7d8;
+$warning-txt              : #b29804;
+$warning-border           : #b29804;
+
+$info-bg                  : #e8f3ff;
+$info-txt                 : #537df6;
+$info-border              : #537df6;
+
+$success-bg               : #dafce1;
+$success-txt              : #0ca129;
+$success-border           : #0ca129;
+
+
+
+
+// --------------------------------------------------------
+//
+//  Texture
+//
+// --------------------------------------------------------
+
+$border-color             : color(grey);
+$border-style             : solid;
+$border-width             : 1px;
+$border-radius            : 3px;

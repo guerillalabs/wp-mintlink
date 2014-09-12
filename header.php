@@ -1,24 +1,45 @@
-<?php
-/**
- * The header for our theme.
- *
- * Displays all of the <head> section and everything up till <div id="content">
- *
- * @package mintlink
- */
-?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<!doctype html>
+<!--[if (lte IE 8)&!(IEMobile)]><html class="no-js lte-ie8 lte-ie9" <?php language_attributes(); ?>><![endif]-->
+<!--[if (lte IE 9)&!(IEMobile)]><html class="no-js lte-ie9" <?php language_attributes(); ?>><![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" <?php language_attributes(); ?>><!--<![endif]-->
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title><?php wp_title( '|', true, 'right' ); ?></title>
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+    <!-- META -->
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<?php wp_head(); ?>
+    <!-- TITLE -->
+    <title><?php wp_title( '|', true, 'right' ); ?></title>
+
+    <!-- CSS -->
+    <!-- For old IE -->
+    <!--[if (lte IE 8)&!(IEMobile)]>
+        <link rel='stylesheet' href='<?php echo get_stylesheet_directory_uri(); ?>/css/lte-ie8.css'>
+    <![endif]-->
+
+    <!-- For all other browsers -->
+    <!--[if gt IE 8]><!-->
+        <link rel='stylesheet' href='<?php echo get_stylesheet_directory_uri(); ?>/css/screen.css'>
+    <!--<![endif]-->
+
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+    <!-- JS -->
+    <script>var b = document.documentElement; b.className = b.className.replace(/\bno-js\b/,'js'); b.setAttribute('data-useragent', navigator.userAgent); b.setAttribute("data-platform", navigator.platform );</script>
+
+    <!-- HTML5 Shiv for old IE -->
+    <!--[if (lte IE 8)&!(IEMobile)]>
+    <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/ie.js"></script>
+    <![endif]-->
+
+    <?php wp_head(); ?>
 </head>
-
 <body <?php body_class(); ?>>
+
+
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'mintlink' ); ?></a>
 

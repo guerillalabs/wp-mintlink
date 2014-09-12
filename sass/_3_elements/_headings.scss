@@ -1,0 +1,44 @@
+//
+//   @headings
+// --------------------------------------------------------
+//   _3_elements/_headings.scss
+// --------------------------------------------------------
+//
+//  We set any base styles for any headings that have
+//  no classnames.
+//
+//  Note: Often, we'll use bold fonts, and if a bold font
+//  has font-weight: bold it looks terrible.  In
+//  this case, use font-weight: normal;
+
+//  Double-stranded heading hierarchy is built into the
+//  _vars.scss file. These styles actually extend that
+//  hierarchy. See CSSwizardry for more information on
+//  double-stranded headings:
+//  csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css
+//
+// --------------------------------------------------------
+
+h1 {
+  @extend %sans-bold;
+}
+
+h2 {
+  @extend %text-xl;
+}
+
+h3 {
+  @extend %text-l;
+}
+
+h4 {
+  @extend %text-m;
+}
+
+h5 {
+  @extend %text-s;
+}
+
+h6 {
+  @extend %text-xs;
+}

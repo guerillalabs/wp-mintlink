@@ -1,0 +1,50 @@
+//
+//   @shapes
+// ---------------------------------------------------------
+//
+//  Utility classes for vertical and horizontal spacing.
+//
+// ---------------------------------------------------------
+
+//
+//   @vertical
+// --------------------------------------------------------
+
+.vertical-margin-xxl, %vertical-margin-xxl { margin-bottom: $spacing-xxl; }
+.vertical-margin-xl, %vertical-margin-xl   { margin-bottom: $spacing-xl; }
+.vertical-margin-l, %vertical-margin-l     { margin-bottom: $spacing-l; }
+.vertical-margin-m, %vertical-margin-m     { margin-bottom: $spacing-m; }
+.vertical-margin-s, %vertical-margin-s     { margin-bottom: $spacing-s; }
+.vertical-margin-xs, %vertical-margin-xs   { margin-bottom: $spacing-xs; }
+.vertical-margin-xxs, %vertical-margin-xxs { margin-bottom: $spacing-xxs; }
+
+.verical-padding-xxl, %verical-padding-xxl { padding-top: $spacing-xxl; padding-bottom: $spacing-xxl; }
+.verical-padding-xl, %verical-padding-xl   { padding-top: $spacing-xl; padding-bottom: $spacing-xl; }
+.verical-padding-l, %verical-padding-l     { padding-top: $spacing-l; padding-bottom: $spacing-l; }
+.verical-padding-m, %verical-padding-m     { padding-top: $spacing-m; padding-bottom: $spacing-m; }
+.verical-padding-s, %verical-padding-s     { padding-top: $spacing-s; padding-bottom: $spacing-s; }
+.verical-padding-xs, %verical-padding-xs   { padding-top: $spacing-xs; padding-bottom: $spacing-xs; }
+.verical-padding-xxs, %verical-padding-xxs { padding-top: $spacing-xxs; padding-bottom: $spacing-xxs; }
+
+
+
+
+//
+//   @horizontal
+// --------------------------------------------------------
+
+.horizontal-margin-xxl, %horizontal-margin-xxl   { margin-left: $spacing-xxl; margin-right: $spacing-xxl; }
+.horizontal-margin-xl, %horizontal-margin-xl     { margin-left: $spacing-xl; margin-right: $spacing-xl; }
+.horizontal-margin-l, %horizontal-margin-l       { margin-left: $spacing-l; margin-right: $spacing-l; }
+.horizontal-margin-m, %horizontal-margin-m       { margin-left: $spacing-m; margin-right: $spacing-m; }
+.horizontal-margin-s, %horizontal-margin-s       { margin-left: $spacing-s; margin-right: $spacing-s; }
+.horizontal-margin-xs, %horizontal-margin-xs     { margin-left: $spacing-xs; margin-right: $spacing-xs; }
+.horizontal-margin-xxs, %horizontal-margin-xxs   { margin-left: $spacing-xxs; margin-right: $spacing-xxs; }
+
+.horizontal-padding-xxl, %horizontal-padding-xxl { padding-left: $spacing-xxl; padding-right: $spacing-xxl; }
+.horizontal-padding-xl, %horizontal-padding-xl   { padding-left: $spacing-xl; padding-right: $spacing-xl; }
+.horizontal-padding-l, %horizontal-padding-l     { padding-left: $spacing-l; padding-right: $spacing-l; }
+.horizontal-padding-m, %horizontal-padding-m     { padding-left: $spacing-m; padding-right: $spacing-m; }
+.horizontal-padding-s, %horizontal-padding-s     { padding-left: $spacing-s; padding-right: $spacing-s; }
+.horizontal-padding-xs, %horizontal-padding-xs   { padding-left: $spacing-xs; padding-right: $spacing-xs; }
+.horizontal-padding-xxs, %horizontal-padding-xxs { padding-left: $spacing-xxs; padding-right: $spacing-xxs; }

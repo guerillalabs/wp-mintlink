@@ -1,0 +1,16 @@
+//
+//   @cover
+// ---------------------------------------------------------
+//
+//  Utility class to force an element to cover its positioned
+//  parent element.
+//
+// ---------------------------------------------------------
+
+.cover, %cover {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}

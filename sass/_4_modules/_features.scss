@@ -1,0 +1,63 @@
+//
+//   @features
+// ---------------------------------------------------------
+//  _4_modules/_features.scss
+// ---------------------------------------------------------
+//
+//  The four columns on the home page that shift upward
+//  on hover
+//
+// ---------------------------------------------------------
+.features {
+    @extend %clearfix;
+
+    background-color: #f8f8f9;
+}
+.features__inner {
+    margin: 0 auto;
+    max-width: 970px;
+}
+
+.features__item {
+    padding: 60px;
+    text-align: center;
+
+    @include media('screen and #{map-get($breakpoints, "medium")}', $no-query-fallback: true) {
+        display: table-cell;
+        padding: 120px 10px;
+        width: 25%;
+
+        &:hover {
+            background-color: color('white');
+
+            .features__block {
+                transform: translate3d(0, -25px, 0);
+            }
+        }
+    }
+}
+
+.features__block {
+    transition: transform 0.25s ease-in;
+    transform: translate3d(0, 0, 0);
+}
+
+.features__heading {
+    @extend %sans;
+
+    color: #40474e;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+.features__text {
+    @extend %sans-light;
+
+    color: color('grey');
+    font-size: 14px;
+}
+
+.features__icon {
+    margin: 0 auto 15px;
+    width: 42px;
+}

@@ -1,0 +1,19 @@
+//
+//   @sm--hide
+// --------------------------------------------------------
+//
+//   Hide content at the small breakpoint
+//
+// --------------------------------------------------------
+
+.sm--hide {
+    @include media('screen and #{map-get($breakpoints-max, "small")}', $no-query-fallback: false) {
+        display: none;
+    }
+}
+.sm--visible {
+    display: none !important;
+    @include media('screen and #{map-get($breakpoints-max, "small")}', $no-query-fallback: false) {
+        display: block !important;
+    }
+}

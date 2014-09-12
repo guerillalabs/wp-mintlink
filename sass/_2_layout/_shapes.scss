@@ -1,0 +1,32 @@
+//
+//   @shapes
+// ---------------------------------------------------------
+//
+//  Utility classes to shape elements.
+//
+// ---------------------------------------------------------
+
+//
+//   @rounded
+// --------------------------------------------------------
+
+.rounded, %rounded { border-radius: $border-radius; }
+
+
+
+
+//
+//   @circle
+// --------------------------------------------------------
+//
+//  Popular circle image for bios, etc.
+//
+//  Elements must be equal width and height (square) for this
+//  to make it into a circle.
+//
+//  Example: Circle image
+//  <img class="circle" src="http://fillmurray.com/300/300">
+//
+// --------------------------------------------------------
+
+.circle, %circle { border-radius: 50%; }

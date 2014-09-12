@@ -1,0 +1,48 @@
+//
+//   @skins
+// ---------------------------------------------------------
+//  _1_foundation/_skins.scss
+// ---------------------------------------------------------
+//
+//  Quick classes to change out backgrounds, colors
+//  and borders.
+//
+//  Backgrounds and colors from http://clrs.cc
+//
+// ---------------------------------------------------------
+
+// Default color variables. Overwrite these in _vars.scss
+$colors: (
+  'aqua'    : #7FDBFF,
+  'blue'    : #0074D9,
+  'navy'    : #001F3F,
+  'teal'    : #39CCCC,
+  'green'   : #2ECC40,
+  'olive'   : #3D9970,
+  'lime'    : #01FF70,
+  'yellow'  : #FFDC00,
+  'orange'  : #FF851B,
+  'red'     : #FF4136,
+  'fuchsia' : #F012BE,
+  'purple'  : #B10DC9,
+  'maroon'  : #85144B,
+  'white'   : #fff,
+  'silver'  : #ddd,
+  'gray'    : #aaa,
+  'black'   : #111,
+)!default;
+
+// Backgrounds and Text Colors
+@each $color, $val in $colors {
+    .bg-#{$color}, %bg-#{$color} { background-color: $val; }
+    .#{$color}, %#{$color} { color: $val; }
+}
+
+
+
+
+//
+//   @borders
+// --------------------------------------------------------
+
+.border, %border            { border: $border-width $border-style $border-color; }

@@ -1,0 +1,376 @@
+//
+//   @nav
+// ---------------------------------------------------------
+//  _3_elements/_nav.scss
+// ---------------------------------------------------------
+//
+//  The navigation modules
+//
+// ---------------------------------------------------------
+//
+//  The usual .nav floats everything left in a row
+//
+//  Example: .nav
+//   <ul class=nav>
+//       <li><a href=#>Home</a></li>
+//       <li><a href=#>About</a></li>
+//       <li><a href=#>Portfolio</a></li>
+//       <li><a href=#>Contact</a></li>
+//   </ul>
+//
+// ---------------------------------------------------------
+
+.nav {
+  @extend %clearfix;
+  list-style:none;
+  margin-left:0;
+  > li {
+    &,
+    > a {
+      display:inline-block;
+    }
+  }
+}
+
+
+
+
+//
+//   @nav--stacked
+// --------------------------------------------------------
+//
+//  .nav--stacked extends .nav and throws the list into vertical mode, e.g.:
+//
+//  Example: Nav, stacked
+//   <ul class="nav  nav--stacked">
+//       <li><a href=#>Home</a></li>
+//       <li><a href=#>About</a></li>
+//       <li><a href=#>Portfolio</a></li>
+//       <li><a href=#>Contact</a></li>
+//   </ul>
+//
+// --------------------------------------------------------
+
+.nav--stacked{
+
+  > li {
+    display:list-item;
+    margin-left: 0;
+    > a {
+      display:block;
+    }
+  }
+}
+
+
+
+
+//
+//   @nav--centered
+// --------------------------------------------------------
+//
+//  .nav--centered extends .nav and centers the list
+//
+//  Example: Nav, centered
+//   <ul class="nav  nav--centered">
+//       <li><a href=#>Home</a></li>
+//       <li><a href=#>About</a></li>
+//       <li><a href=#>Portfolio</a></li>
+//       <li><a href=#>Contact</a></li>
+//   </ul>
+// --------------------------------------------------------
+
+.nav--centered {
+    text-align:center;
+}
+
+
+
+
+//
+//   @nav--fit
+// --------------------------------------------------------
+//
+//  Force a nav to occupy 100% of the available width of its parent.
+//
+//  Example: Nav, fit
+//  <ul class="nav  nav--fit">
+//     <li><a href=#>Home</a></li>
+//     <li><a href=#>About</a></li>
+//     <li><a href=#>Portfolio</a></li>
+//     <li><a href=#>Contact</a></li>
+//  </ul>
+//
+// --------------------------------------------------------
+
+.nav--fit{
+  display:table;
+  width:100%;
+  > li {
+    display:table-cell;
+    > a {
+      display:block;
+    }
+  }
+}
+
+
+
+
+//
+//   @nav--piped
+// --------------------------------------------------------
+//
+//  Add pipes in between nav links.
+//
+//  Example: Nav piped
+//  <ul class="nav  nav--piped">
+//     <li><a href=#>Home</a></li>
+//     <li><a href=#>About</a></li>
+//     <li><a href=#>Portfolio</a></li>
+//     <li><a href=#>Contact</a></li>
+//  </ul>
+//
+// --------------------------------------------------------
+
+.nav--piped {
+  a {
+    display: inline-block;
+    margin-right: .5em;
+    padding-right: .75em;
+    position: relative;
+    &:after {
+      background: color('grey');
+      bottom: 30%;
+      content: "";
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 20%;
+      width: 1px;
+    }
+  }
+
+  li:last-child a:after {
+    width: 0;
+  }
+}
+
+//
+//   @primary-nav
+// --------------------------------------------------------
+//
+//   Nav slidey
+//
+// --------------------------------------------------------
+
+body {
+  transition: transform 0.25s ease-in;
+
+  &.show-nav {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    transform: translate3d(-240px, 0, 0);
+
+    @include media('screen and #{map-get($breakpoints, "medium")}', $no-query-fallback: false) {
+      transform: translate3d(-315px, 0, 0);
+    }
+
+    .lte-ie8 & {
+      right: 315px;
+    }
+    .lte-ie9 & {
+      right: 295px;
+    }
+  }
+}
+
+.page-frame {
+  background-color: color('white');
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.25);
+  position: relative;
+  width: 100%;
+  z-index: 5;
+}
+
+.primary-nav {
+  background-color: #4c4f55;
+  color: color('white');
+  height: 100%;
+  position: fixed;
+  left: 100%;
+  top: 0;
+  width: 240px;
+
+  @include media('screen and #{map-get($breakpoints, "medium")}', $no-query-fallback: true) {
+    width: 315px;
+  }
+
+  body.show-nav & {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  html[data-useragent*="MSIE"] body.show-nav &, html[data-useragent*="Trident/7.0"] body.show-nav & {
+    left: auto;
+    right: 0;
+  }
+}
+
+.primary-nav__link {
+  @extend %sans-light;
+
+  color: #66e7b1;
+  display: block;
+  font-size: 14px;
+  padding: 12px 42px;
+  line-height: 1;
+  text-decoration: none;
+  transition: all 0.25s ease-in-out;
+
+  &:hover {
+    color: #529b7f;
+  }
+}
+
+.primary-nav__section {
+  background-color: #5f636a;
+  color: color('white');
+  display: block;
+  margin-bottom: 1px;
+  padding: 24px 24px 24px 42px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.primary-nav__icon {
+  display: inline-block;
+  margin-right: 18px;
+  vertical-align: middle;
+
+  height: 20px;
+  width: auto;
+}
+
+.primary-nav__section--link {
+  transition: all 0.25s ease-in-out;
+
+  &:hover {
+    background-color: #36383c;
+  }
+}
+
+.primary-nav__level-two {
+  margin: 12px 0;
+}
+
+.primary-nav__btn {
+  @extend %sans-light;
+
+  background-color: color('green');
+  color: color('white');
+  display: block;
+  font-size: 16px;
+  padding: 24px 12px;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.25s ease-in-out;
+
+  &:hover {
+    background-color: #36383c;
+  }
+
+  .primary-nav__icon {
+    margin-top: -5px;
+  }
+
+  @include media('screen and #{map-get($breakpoints, "medium")}', $no-query-fallback: false) {
+    padding: 24px 42px;
+  }
+}
+
+
+
+//
+//   @sub nav
+// --------------------------------------------------------
+//
+//   Sub nav on interior pages
+//
+// --------------------------------------------------------
+.sub-nav-wrap {
+  @extend %clearfix;
+
+  background-color: color('green');
+}
+
+.sub-nav--carousel {
+  padding: 0 30px;
+}
+
+.sub-nav {
+  margin: 0 auto;
+  max-width: 970px;
+
+  @include media('screen and #{map-get($breakpoints-max, "medium")}', $no-query-fallback: false) {
+    // padding needed for when carousel kicks in
+    padding: 0 30px;
+  }
+
+  // &__item {
+  //   float: left;
+  //   width: 25%;
+  // }
+
+  &__link {
+    @extend %sans;
+
+    background-color: color('green');
+    color: color('white');
+    display: block;
+    font-size: 12px;
+    padding: 25px 0;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.25s ease-in-out;
+
+    &:hover, &.is_active {
+      background-color: color('white');
+      color: color('green');
+      opacity: 1;
+
+      .sub-nav__img {
+        fill: color('green');
+      }
+    }
+
+    .lte-ie8 &:hover, .lte-ie8 &.is_active {
+      background-color: darken(color('green'), 20%);
+      color: ('white');
+    }
+  }
+
+  &__text {
+    display: inline-block;
+  }
+
+  &__icon {
+    display: inline-block;
+    height: 30px;
+    margin-right: 12px;
+    vertical-align: middle;
+    width: 30px;
+
+    .lte-ie8 & img{
+      height: auto;
+      width: auto;
+    }
+  }
+
+  &__img {
+    fill: color('white');
+  }
+}

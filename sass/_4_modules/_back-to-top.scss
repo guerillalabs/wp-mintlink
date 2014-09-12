@@ -1,0 +1,39 @@
+//
+//   @back-to-top
+// ---------------------------------------------------------
+//  _4_modules/_back-to-top.scss
+// ---------------------------------------------------------
+//
+//  Link that appears as you scroll to take you back
+//  to the top of the page
+//
+// ---------------------------------------------------------
+
+.page-top {
+    background-color: color('green');
+    border: 1px solid color('white');
+    bottom: 50px;
+    height: 41px;
+    padding: 6px 9px;
+    position: fixed;
+    right: 25px;
+    transition: all 0.25s ease-in;
+    transform: translate3d(0, 100px, 0);
+    width: 43px;
+
+    &.is-visible {
+        transform: translate3d(0, 0, 0);
+    }
+
+    .lte-ie8 & {
+        display: none;
+    }
+
+    .lte-ie9 & {
+        transform: translate(0, 100px);
+    }
+
+    .lte-ie9 &.is-visible {
+        transform: translate(0, 0);
+    }
+}

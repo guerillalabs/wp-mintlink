@@ -1,0 +1,109 @@
+//
+//   @site-footer
+// --------------------------------------------------------
+//  _5_sections/_site-footer.scss
+// --------------------------------------------------------
+//
+//  The site's footer
+//
+//  This is currently set up with the assumption that there
+//  will be 2 navs and a credits area.
+//
+// --------------------------------------------------------
+
+.site-footer {
+  background: color('green') url(#{$baseurl}img/bg-footer.jpg) no-repeat 50% 50%;
+  background-size: cover;
+}
+
+
+
+
+//   @site-footer__primary-nav
+// --------------------------------------------------------
+//  The primary navigation in the footer
+// --------------------------------------------------------
+
+.site-nav--footer-wrap {
+  float: left;
+}
+
+.site-nav--footer {
+    margin-bottom: 12px;
+}
+
+.site-nav--footer__link {
+    @extend %sans-light;
+
+    color: color('green');
+    font-size: 14px;
+}
+
+.site-nav--footer--sub {
+  float: right;
+}
+.site-nav--footer--sub__link {
+  display: inline-block;
+  height: 36px;
+  vertical-align: middle;
+  width: 36px;
+  &:hover {
+    transform: translate3d(0,-4px,0);
+  }
+
+  html[data-useragent*="Trident/7.0"] &, html[data-useragent*="MSIE"] &,
+  html[data-useragent*="Trident/7.0"] & img, html[data-useragent*="MSIE"] & img {
+    height: 42px;
+    width: 42px;
+  }
+}
+
+.logo-footer {
+  margin-bottom: 40px;
+}
+
+.social {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+
+
+//   @site-credits
+// --------------------------------------------------------
+//  The credits section of the site
+// --------------------------------------------------------
+
+.site-credits {
+  @extend %sans-light;
+
+  clear: left;
+  color: color('grey');
+  float: left;
+  font-size: 12px;
+  width: 304px;
+}
+
+
+@include media('screen and #{map-get($breakpoints-max, "small")}', $no-query-fallback: false) {
+  .site-nav--footer-wrap,
+  .site-nav--footer--sub,
+  .site-credits {
+    float: none;
+    text-align: center;
+    width: 100%
+  }
+
+  .logo-footer {
+    margin-bottom: 25px;
+  }
+
+  .site-credits, .social {
+    margin-bottom: 30px;
+  }
+
+  .social {
+    display: block;
+    margin-right: 0;
+  }
+}

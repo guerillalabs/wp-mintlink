@@ -1,0 +1,6 @@
+.svg-fallback {
+    display: none !important;
+}
+.no-svg .svg-fallback {
+    display: block !important;
+}

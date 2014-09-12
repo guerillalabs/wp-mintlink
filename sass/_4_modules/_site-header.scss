@@ -1,0 +1,251 @@
+//
+//   @site-header
+// --------------------------------------------------------
+//  _5_sections/_site-header.scss
+// --------------------------------------------------------
+//
+//  Site-wide header
+//
+// --------------------------------------------------------
+
+.site-header {
+  @extend %clearfix;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom: 14px solid color('green');
+  height: 794px;
+  padding: 0 20px;
+  position: relative;
+}
+
+.site-header--section {
+  border: 0;
+  height: 422px;
+}
+
+.site-header--gradient {
+  background: #00b18f;
+  background: linear-gradient(to right, #00b18f, #a0d7b3);
+  border-bottom: 14px solid color('green');
+}
+
+
+
+//   @site-nav
+// --------------------------------------------------------
+//  Main Site Navigation
+// --------------------------------------------------------
+
+.site-nav {
+  border-bottom: 1px solid color('white');
+  margin-bottom: 100px;
+  padding-bottom: 34px;
+  padding-top: 50px;
+}
+
+.site-nav__home {
+  float: left;
+
+  @include media('screen and #{map-get($breakpoints-max, "small")}', $no-query-fallback: false) {
+    background: url(#{$baseurl}img/logos/logo-mark-white.svg) no-repeat 0 0;
+    height: 35px;
+    width: 79px;
+
+    img {
+      visibility: hidden;
+    }
+  }
+
+  .lte-ie8 & {
+    width: 274px;
+  }
+}
+
+.site-nav__list {
+  float: right;
+  // lines up with baseline of logo text
+  margin-top: 9px;
+}
+
+.site-nav__item {
+  display: inline;
+  margin-left: 32px;
+
+  .lte-ie8 & {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.site-nav__link {
+  @extend %sans;
+
+  color: color('white');
+  font-size: 13px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: opacity 0.25s ease-in-out;
+
+  &:hover {
+    opacity: 0.75;
+  }
+
+  .lte-ie8 &:first-child {
+    padding-right: 21px;
+    position: relative;
+
+  }
+}
+
+.site-nav__icon {
+  display: inline-block;
+  height: 16px;
+  margin-left: 5px;
+  margin-top: -7px;
+  vertical-align: middle;
+  width: 12px;
+
+  .lte-ie8 & {
+    margin-top: 0;
+    position: absolute;
+    top: -3px;
+  }
+}
+
+.site-nav__button {
+  display: inline-block;
+  height: 13px;
+  position: relative;
+  margin-left: 5px;
+  width: 18px;
+
+  .top-bar,
+  .middle-bar,
+  .bottom-bar {
+    background-color: color('white');
+    border-radius: 4px;
+    height: 2px;
+    left: 0px;
+    position: absolute;
+    transition: transform 0.1s 0s ease-in-out, top 0.1s 0.1s ease-in-out;
+    transform-origin: 50% 50%;
+    top: 2px;
+    width: 18px;
+  }
+  .middle-bar {
+    opacity: 0s 0.15s linear;
+    top: 7px;
+  }
+  .bottom-bar {
+    top: 12px;
+  }
+
+  &.is-open {
+    .top-bar,
+    .bottom-bar {
+      top: 6px;
+      transition: top 0.1s 0.1s ease-in-out, transform 0.1s 0.2s ease-in-out;
+    }
+    .top-bar {
+      transform: rotate(45deg);
+    }
+    .middle-bar {
+      opacity: 0;
+    }
+    .bottom-bar {
+      transform: rotate(-45deg);
+    }
+  }
+
+  .lte-ie8 &.is-open {
+    .top-bar {
+      top: 2px;
+    }
+    .bottom-bar {
+      top: 12px;
+    }
+  }
+}
+
+
+
+//   @section-header
+// --------------------------------------------------------
+//  Section header - section title and description
+// --------------------------------------------------------
+
+.home-header {
+  color: color('white');
+
+  &__heading {
+    @extend %sans-bold;
+
+    font-size: 98px;
+    line-height: 88px;
+    margin-bottom: 26px;
+    text-transform: uppercase;
+
+    @include media('screen and #{map-get($breakpoints-max, "medium")}', $no-query-fallback: false) {
+      font-size: 64px;
+      line-height: 64px;
+    }
+
+    @include media('screen and #{map-get($breakpoints-max, "small")}', $no-query-fallback: false) {
+      font-size: 43px;
+      line-height: 43px;
+    }
+  }
+  &__text {
+    @extend %sans-extra-light;
+
+    font-size: 30px;
+    line-height: 1.2;
+    margin-bottom: 50px;
+    width: 499px;
+
+    @include media('screen and #{map-get($breakpoints-max, "small")}', $no-query-fallback: false) {
+      font-size: 20px;
+      width: 100%;
+    }
+  }
+}
+
+.section-header {
+  &__heading, &__text {
+    color: color('white');
+    text-align: center;
+  }
+
+  &__heading {
+    @extend %sans-bold;
+
+    font-size: 60px;
+    line-height: 1;
+    text-transform: uppercase;
+
+    @include media('screen and #{map-get($breakpoints-max, "medium")}', $no-query-fallback: false) {
+      font-size: 45px;
+      line-height: 45px;
+    }
+
+    @include media('screen and #{map-get($breakpoints-max, "small")}', $no-query-fallback: false) {
+      font-size: 30px;
+      line-height: 30px;
+    }
+  }
+
+  &__text {
+    @extend %sans-extra-light;
+
+    font-size: 30px;
+    line-height: 1.2;
+    margin-bottom: 100px;
+
+    @include media('screen and #{map-get($breakpoints-max, "small")}', $no-query-fallback: false) {
+      font-size: 20px;
+    }
+  }
+}
+
+

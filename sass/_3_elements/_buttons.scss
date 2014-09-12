@@ -1,0 +1,144 @@
+//
+//   @buttons
+// ----------------------------------------------------------
+//  _3_elements/_buttons.scss
+// ----------------------------------------------------------
+//
+//  Buttons are a common UI component in sites/apps.  They
+//  are usually either anchor, button, or input elements
+//  with a classname of 'btn'.  They provide an easily
+//  identified clickable target.
+//
+//  Buttons commonly have modifying classes that apply
+//  specific styles.
+//
+// ----------------------------------------------------------
+
+
+
+
+//
+//   @btn
+// --------------------------------------------------------
+//  Your primary, go-to button
+//
+//  Example: Anchor Button
+//  <a href="#" class="btn" title="sample">Anchor Button</a>
+//
+//  Example: Button with class .btn
+//  <button class="btn">Button Button</button>
+//
+//  Example: Input with class .btn
+//  <input type="submit" class="btn" value="Input Button">
+//
+//  Example: Active state, with .active
+//  <a href="#" class="btn is-active">Active Button</a>
+//
+// --------------------------------------------------------
+
+.btn {
+  border: none;
+  display: inline-block;
+  line-height: 1;
+  text-decoration: none;
+  transition: all 0.25s ease-in-out;
+  vertical-align: middle;
+
+  &.is-active {
+    opacity: .75;
+  }
+  &:hover,
+  &:focus {
+    opacity: .85;
+  }
+}
+
+.btn--outline {
+  background: transparent;
+  border: 1px solid color('white');
+  border-radius: 12px;
+  color: color('white');
+  padding: 20px 25px;
+
+  &:hover {
+    background-color: color('white');
+    color: color('green');
+  }
+}
+
+
+.btn--outline--green {
+  border-color: color('green');
+  color: color('green');
+
+  &:hover {
+    background-color: color('green');
+    color: color('white');
+  }
+}
+
+//
+//   @btn--small
+// --------------------------------------------------------
+//
+//  A btn modifier, small
+//
+//  Example: .btn--small
+//  <a class="btn btn--small">Small button</a>
+//
+// --------------------------------------------------------
+
+.btn--small {
+  border-radius: 8px;
+  font-size: 13px;
+  padding: 15px;
+  text-transform: uppercase;
+}
+
+
+
+
+//
+//   @btn--inline
+// --------------------------------------------------------
+//
+//  A btn modifier, if this button is in a paragraph or
+//  in anything else that has a defined font-size, this
+//  modifier will make the btn inherit the font-size of
+//  the partent.
+//
+//  Example: .btn--inline
+//  <p>Here's some text <a class="btn btn--inline">Cool button</a> text keeps going</p>
+//
+// --------------------------------------------------------
+
+.btn--inline {
+  font-size: 1em;
+}
+
+
+
+
+//
+//   @btn--block
+// --------------------------------------------------------
+//
+//  A btn modifier - makes the button display block, 100%
+//  width and aligns the text to the center.  Removes left
+//  and right padding since the text is center aligned, it
+//  is not needed.  Actually sometimes having the padding
+//  on the left and right causes problems if the centered
+//  text is quite long - so we just remove it.
+//
+//  Example: .btn--block
+//  <a href="#" class="btn btn--block">Block button</a>
+//
+// --------------------------------------------------------
+
+.btn--block {
+  display: block;
+  padding-right: 0;
+  padding-left: 0;
+  text-align: center;
+  width: 100%;
+}

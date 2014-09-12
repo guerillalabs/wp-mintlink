@@ -1,0 +1,89 @@
+//
+//   @hide
+// ---------------------------------------------------------
+//
+//  Utility state classes to hide things in different ways
+//
+// ---------------------------------------------------------
+
+// The classic, display: none
+.is-hidden, %is-hidden {
+    display: none;
+}
+
+// --------------------------------------------------------
+//
+//  Breakpoint specific hidden classes.
+//
+//  These breakpoints are defined in _1_base/_vars.scss,
+//  and should use max-width.
+//
+//  These are removed for old IE - use the default class,
+//  above, to hide elements there.
+//
+//  Example:
+//
+//  .feature {
+//      @extend %is-hidden--small;
+//  }
+//
+// --------------------------------------------------------
+
+@each $breakpoint in $breakpoints-max {
+    $name: nth($breakpoint, 1);
+    $declaration: nth($breakpoint, 2);
+
+    .is-hidden--#{$name}, %is-hidden--#{$name} {
+        @include media('only screen and #{$declaration}', false) {
+            display: none;
+        }
+    }
+}
+
+
+
+
+// Use this if you still need JS access to this element
+// it's visually hidden but still in the DOM
+.is-visually-hidden, %is-visually-hidden {
+    height: 0;
+    left: -9999%;
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    position: absolute;
+}
+
+// --------------------------------------------------------
+//
+//  Breakpoint specific visually hidden classes.
+//
+//  These breakpoints are defined in _1_base/_vars.scss,
+//  and should use max-width.
+//
+//  These are removed for old IE - use the default class,
+//  above, to hide elements there.
+//
+//  Example:
+//
+//  .feature {
+//      @extend %is-visually-hidden--small;
+//  }
+//
+// --------------------------------------------------------
+
+@each $breakpoint in $breakpoints-max {
+    $name: nth($breakpoint, 1);
+    $declaration: nth($breakpoint, 2);
+
+    .is-visually-hidden--#{$name}, %is-visually-hidden--#{$name} {
+        @include media('only screen and #{$declaration}', false) {
+            height: 0;
+            left: -9999%;
+            margin: 0;
+            opacity: 0;
+            padding: 0;
+            position: absolute;
+        }
+    }
+}
