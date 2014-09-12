@@ -31,14 +31,23 @@ function mintlink_setup() {
 	load_theme_textdomain( 'mintlink', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
+	// add_theme_support( 'automatic-feed-links' );
+
+	// remove some links in the head
+	remove_action('wp_head', 'start_post_rel_link_wp_head', 10, 0 );
+	remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+	remove_action('wp_head', 'parent_post_rel_link_wp_head', 10, 0);
+	remove_action('wp_head', 'wp_generator');
+	remove_action ('wp_head', 'rsd_link');
+	remove_action( 'wp_head', 'wlwmanifest_link');
+	remove_action( 'wp_head', 'wp_shortlink_wp_head');
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -83,6 +92,15 @@ function remove_menus(){
   remove_menu_page( 'edit-comments.php' );          //Comments
 }
 add_action( 'admin_menu', 'remove_menus' );
+
+
+
+
+// remove 'menu-icon' styles
+function my_deregister_styles() {
+	wp_deregister_style( 'menu-icons-extra' );
+}
+add_action( 'wp_print_styles', 'my_deregister_styles', 100 );
 
 
 
