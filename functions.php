@@ -117,17 +117,11 @@ add_action( 'widgets_init', 'mintlink_widgets_init' );
  * Enqueue scripts and styles.
  */
 function mintlink_scripts() {
-	wp_enqueue_style( 'mintlink-style', get_stylesheet_uri() );
-
-	wp_enqueue_script( 'mintlink-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
-
-	wp_enqueue_script( 'mintlink-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+   wp_deregister_script('jquery');
+   wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', array(), '1.11.0', true);
+   wp_enqueue_script('jquery');
 }
-add_action( 'wp_enqueue_scripts', 'mintlink_scripts' );
+if (!is_admin()) add_action("wp_enqueue_scripts", "mintlink_scripts", 1);
 
 /**
  * Implement the Custom Header feature.
