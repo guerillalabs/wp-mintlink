@@ -48,6 +48,19 @@
             </div><!-- /section--full__inner-wide -->
           </div><!-- /section--full -->
 
+
+
+          <!-- contact page footers -->
+          <?php if ( is_page( 'contact' ) ): ?>
+            <?php dynamic_sidebar( 'sidebar-contact' ); ?>
+          <?php elseif ( is_page( 'partner' ) ): ?>
+            <?php dynamic_sidebar( 'sidebar-partner' ); ?>
+          <?php elseif ( is_page( 'support' ) ): ?>
+            <?php dynamic_sidebar( 'sidebar-support' ); ?>
+          <?php endif; ?>
+
+
+
           <div class="section--full">
 
             <div class="section--full__inner-wide">

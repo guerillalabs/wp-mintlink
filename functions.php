@@ -105,31 +105,43 @@ add_action( 'wp_print_styles', 'my_deregister_styles', 100 );
 
 
 /**
- * Register widget area.
+ * Register widget areas.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function mintlink_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Solutions', 'mintlink' ),
-		'id'            => 'sidebar-solutions',
+		'name'          => __( 'Contact Footer', 'mintlink' ),
+		'id'            => 'sidebar-contact',
 		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Industries', 'mintlink' ),
-		'id'            => 'sidebar-industries',
+		'name'          => __( 'Partner Footer', 'mintlink' ),
+		'id'            => 'sidebar-partner',
 		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Support Footer', 'mintlink' ),
+		'id'            => 'sidebar-support',
+		'description'   => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '',
 	) );
 }
 add_action( 'widgets_init', 'mintlink_widgets_init' );
+
+
+
 
 /**
  * Enqueue scripts and styles.
