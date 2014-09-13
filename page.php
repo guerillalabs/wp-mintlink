@@ -13,7 +13,14 @@
 get_header(); ?>
     <?php while ( have_posts() ) : the_post(); ?>
 
-        <?php get_template_part( 'partials/page-header', 'index' ); ?>
+        <?php
+        if ( has_post_thumbnail() ) {
+            get_template_part( 'partials/page-header', 'index' );
+        }
+        else {
+            get_template_part( 'partials/page-header', 'gradient' );
+        }
+        ?>
 
     	<!-- Site's Main Content-->
         <main class="site-main" role="main">
