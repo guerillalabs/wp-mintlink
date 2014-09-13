@@ -70,7 +70,7 @@
                   <a class="site-nav--footer--sub__link" href=""><img src="<?php echo get_template_directory_uri(); ?>/img/social-icons/facebook.svg"></a>
                   <a class="site-nav--footer--sub__link" href=""><img src="<?php echo get_template_directory_uri(); ?>/img/social-icons/linked-in.svg"></a>
                 </span>
-                <a class="btn btn--small btn--outline btn--outline--green" href="#">Member Login</a>
+                <a class="btn btn--small btn--outline btn--outline--green" href="https://www.mymerchantdata.com/6_ms_login2.aspx">Member Login</a>
               </nav>
 
             </div>
