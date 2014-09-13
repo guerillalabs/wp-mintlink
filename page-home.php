@@ -1,7 +1,7 @@
 <?php
 /**
- * Template Name: Content Page
- * The template for displaying longer, content pages.
+ * Template Name: Home Page
+ * The template for displaying the home page.
  *
  * @package mintlink
  */
@@ -9,7 +9,7 @@
 get_header(); ?>
     <?php while ( have_posts() ) : the_post(); ?>
 
-        <?php get_template_part( 'partials/page-header', 'index' ); ?>
+        <?php get_template_part( 'partials/page-header', 'home' ); ?>
 
         <!-- Site's Main Content-->
         <main class="site-main" role="main">

@@ -39,29 +39,31 @@
 </head>
 <body <?php body_class(); ?>>
 
-<!-- nav goes here. -->
+
+
+
+<div class="primary-nav">
+    <ul>
+        <li><a class="primary-nav__section primary-nav__section--link" href="/"><img class="primary-nav__icon" src="<?php echo get_template_directory_uri(); ?>/img/off-canvas-icons/home.svg">Home</a></li>
+        <li>
+            <span class="primary-nav__section"><img class="primary-nav__icon" src="<?php echo get_template_directory_uri(); ?>/img/off-canvas-icons/who-we-are.svg">Who We Are</span>
+            <?php wp_nav_menu( array( 'theme_location' => 'primarywho', 'container' => false, 'menu_class' => 'primary-nav__level-two', 'items_wrap' => '<ul class="%2$s">%3$s</ul>', 'walker' => new mintlink_walker_simple_menu(), 'link_class' => 'primary-nav__link' ) ); ?>
+        </li>
+        <li>
+            <span class="primary-nav__section"><img class="primary-nav__icon" src="<?php echo get_template_directory_uri(); ?>/img/off-canvas-icons/solutions.svg">Solutions</span>
+            <?php wp_nav_menu( array( 'theme_location' => 'primarysolutions', 'container' => false, 'menu_class' => 'primary-nav__level-two', 'items_wrap' => '<ul class="%2$s">%3$s</ul>', 'walker' => new mintlink_walker_simple_menu(), 'link_class' => 'primary-nav__link' ) ); ?>
+        </li>
+        <li>
+            <span class="primary-nav__section"><img class="primary-nav__icon" src="<?php echo get_template_directory_uri(); ?>/img/off-canvas-icons/industries.svg">Industries</span>
+            <?php wp_nav_menu( array( 'theme_location' => 'primaryindustries', 'container' => false, 'menu_class' => 'primary-nav__level-two', 'items_wrap' => '<ul class="%2$s">%3$s</ul>', 'walker' => new mintlink_walker_simple_menu(), 'link_class' => 'primary-nav__link' ) ); ?>
+        </li>
+        <li>
+            <span class="primary-nav__section"><img class="primary-nav__icon" src="<?php echo get_template_directory_uri(); ?>/img/off-canvas-icons/get-in-touch.svg">Get in Touch</span>
+            <?php wp_nav_menu( array( 'theme_location' => 'primarycontact', 'container' => false, 'menu_class' => 'primary-nav__level-two', 'items_wrap' => '<ul class="%2$s">%3$s</ul>', 'walker' => new mintlink_walker_simple_menu(), 'link_class' => 'primary-nav__link' ) ); ?>
+        </li>
+    </ul>
+
+    <a class="primary-nav__btn" href="https://www.mymerchantdata.com/6_ms_login2.aspx"><img class="primary-nav__icon" src="<?php echo get_template_directory_uri(); ?>/img/off-canvas-icons/member-login.svg">Membership Login</a>
+</div>
 
 <div class="page-frame js-page-frame" id="top">
-
-
-
-	<!-- to be removed -->
-	<div id="page" class="hfeed site">
-		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'mintlink' ); ?></a>
-
-		<header id="masthead" class="site-header" role="banner">
-			<div class="site-branding">
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-			</div>
-
-			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<button class="menu-toggle"><?php _e( 'Primary Menu', 'mintlink' ); ?></button>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-			</nav><!-- #site-navigation -->
-		</header><!-- #masthead -->
-
-		<div id="content" class="site-content">
-
-		</div>
-	</div>
