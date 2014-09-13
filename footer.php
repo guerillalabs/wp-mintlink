@@ -56,11 +56,8 @@
 
                 <nav class="site-nav--footer">
                   <img class="img--natural logo-footer" src="<?php echo get_template_directory_uri(); ?>/img/logos/logo-color.svg" alt="MinkLink">
-                  <ul class="nav nav--piped" role="navigation">
-                    <li><a class="site-nav--footer__link" href="#">Privacy</a></li>
-                    <li><a class="site-nav--footer__link" href="#">Legal</a></li>
-                    <li><a class="site-nav--footer__link"href="#">Site Credits</a></li>
-                  </ul>
+
+                  <?php wp_nav_menu( array( 'theme_location' => 'footer', 'container' => false, 'menu_class' => 'nav nav--piped', 'items_wrap' => '<ul class="%2$s" role="navigation">%3$s</ul>', 'walker' => new mintlink_walker_footer_menu() ) ); ?>
                 </nav>
 
                 <p class="site-credits">&copy;<?php echo date('Y'); ?> MintLink LLC. MintLink LLC is a registered ISO/MSP of Fifth Third Bank, Cincinnati, OH</p>
