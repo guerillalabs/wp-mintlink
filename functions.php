@@ -158,6 +158,7 @@ if (!is_admin()) add_action("wp_enqueue_scripts", "mintlink_scripts", 1);
 
 
 
+
 // menu walker classes
 // simple
 class mintlink_walker_simple_menu extends Walker_Nav_Menu {
@@ -189,6 +190,16 @@ class mintlink_walker_simple_menu extends Walker_Nav_Menu {
 	    $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 	}
 }
+
+
+
+
+// allow SVG uploads
+function my_myme_types($mime_types){
+	$mime_types['svg'] = 'image/svg+xml'; //Adding svg extension
+	return $mime_types;
+}
+add_filter('upload_mimes', 'my_myme_types', 1, 1);
 
 
 

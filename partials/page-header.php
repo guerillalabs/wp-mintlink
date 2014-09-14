@@ -1,31 +1,23 @@
     <!-- Site's Header-->
-    <header class="site-header site-header--section" role="banner" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/hero-revenue-solutions.jpg)" data-bottom-top="background-position: 75% 0%;" data-top-bottom="background-position: 75% 100%;">
+    <?php if ( has_post_thumbnail() ):
+        $thumb_id = get_post_thumbnail_id();
+        $thumb_url = wp_get_attachment_image_src($thumb_id, 'full', true);
+        $position_x = CFS()->get('x_focus');
+        if (!$position_x) { $position_x = '50%'; }
+        $position_y = CFS()->get('y_focus');
+        if (!$position_y) { $position_y = '50%'; }
+      ?>
+      <header class="site-header site-header--section" style="background-image: url(<?php echo $thumb_url[0]; ?>); background-position: <?php echo $position_x; ?> <?php echo $position_y; ?>" data-bottom-top="background-position: <?php echo $position_x; ?> 0%;" data-top-bottom="background-position: <?php echo $position_x; ?> 100%;" role="banner">
+    <?php else: ?>
+      <header class="site-header site-header--section site-header--gradient" role="banner">
+    <?php endif; ?>
 
-      <!-- Main site nav -->
-      <nav class="container site-nav">
-
-        <!-- Branding, can be a logo, img ect. -->
-        <a class="site-nav__home" href="<?php echo get_template_directory_uri(); ?>/"><img src="<?php echo get_template_directory_uri(); ?>/img/logos/logo-white.svg" alt="MintLink"></a>
-
-        <ul class="site-nav__list" role="navigation">
-          <li class="site-nav__item sm--hide"><a class="site-nav__link" href="#">Member Login<img class="site-nav__icon" src="<?php echo get_template_directory_uri(); ?>/img/membership-login.svg"></a></li>
-          <li class="site-nav__item">
-            <a class="site-nav__link js-nav" href="#">Menu
-              <div class="site-nav__button js-nav-btn">
-                <div class="top-bar"></div>
-                <div class="middle-bar"></div>
-                <div class="bottom-bar"></div>
-              </div>
-            </a>
-          </li>
-        </ul>
-
-      </nav>
+      <?php get_template_part( 'partials/nav-site' ); ?>
 
       <div class="container section-header js-header-faded faded">
 
-        <h1 class="section-header__heading">{{ page.title }}</h1>
-        <p class="section-header__text">More revenue from your payments?</p>
+        <h1 class="section-header__heading"><?php the_title(); ?></h1>
+        <?php if ( CFS()->get('subtitle') ): ?><p class="section-header__text"><?php echo CFS()->get('subtitle'); ?></p><?php endif; ?>
 
       </div>
 
