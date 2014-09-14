@@ -190,6 +190,49 @@ class mintlink_walker_simple_menu extends Walker_Nav_Menu {
 	    $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 	}
 }
+// section nav (carousel)
+class mintlink_walker_section_menu extends Walker_Nav_Menu {
+
+	// strip classes and ids for li's and alter classes for links
+	 function start_el(  &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+	    global $wp_query;
+
+	    $active_class = in_array("current_page_item",$item->classes) ? ' is_active' : '';
+
+	    // slug
+		$pattern = '/(?<=\/)[^\/]*?(?=(\/(?!.))|(\?)|($))/'; // matches the last segment of the url
+		preg_match($pattern, $item->url, $slug);
+
+		// svg file
+		// $svg = file_get_contents('icons/inline-core-processing.svg.php');
+		$svg = file_get_contents(locate_template('icons/'.$slug[0].'.svg'));
+
+	    // build html
+	    $output .= '<div class="sub-nav__item">';
+
+	    // link attributes
+	    $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+	    $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+	    $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+	    $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+	    $attributes .= ' class="'  . esc_attr( $args->link_class ) . $active_class .'"';
+
+	    // icons
+	    $icons = '<span class="sub-nav__icon">'.$svg.'<img class="svg-fallback" src="'.get_template_directory_uri().'/icons/'.$slug[0].'.png"></span>';
+
+	    $item_output = sprintf( '<a%1$s>%2$s%3$s</a>',
+	        $attributes,
+	        $icons,
+	        apply_filters( 'the_title', $item->title, $item->ID )
+	    );
+
+	    // build html
+	    $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+	}
+    function end_el(&$output, $item, $depth) {
+        $output .= "</div>";
+    }
+}
 
 
 

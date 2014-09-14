@@ -79,7 +79,7 @@
               <nav class="site-nav--footer--sub">
                 <span class="social">
                   <a class="site-nav--footer--sub__link" href=""><img src="<?php echo get_template_directory_uri(); ?>/img/social-icons/google-plus.svg"></a>
-                  <a class="site-nav--footer--sub__link" href=""><img src="<?php echo get_template_directory_uri(); ?>/img/social-icons/twitter.svg"></a>
+                  <a class="site-nav--footer--sub__link" href="https://twitter.com/_MintLink"><img src="<?php echo get_template_directory_uri(); ?>/img/social-icons/twitter.svg"></a>
                   <a class="site-nav--footer--sub__link" href=""><img src="<?php echo get_template_directory_uri(); ?>/img/social-icons/facebook.svg"></a>
                   <a class="site-nav--footer--sub__link" href=""><img src="<?php echo get_template_directory_uri(); ?>/img/social-icons/linked-in.svg"></a>
                 </span>
