@@ -10,7 +10,15 @@
 // section menu
 $section_menu = CFS()->get('section_menu');
 foreach ($section_menu as $value => $label) {
-	if ($value != 'none') {
+	if ($value === 'contact') {
+?>
+		<div class="sub-nav-wrap">
+			<?php wp_nav_menu( array( 'theme_location' => $value, 'container_class' => 'sub-nav', 'menu_class' => 'slick js-nav3-resp-carousel', 'items_wrap' => '<div class="%2$s">%3$s</div>', 'walker' => new mintlink_walker_section_menu(), 'link_class' => 'sub-nav__link' ) ); ?>
+		</div>
+
+<?php
+	}
+	elseif ($value !== 'none') {
 ?>
 		<div class="sub-nav-wrap">
 			<?php wp_nav_menu( array( 'theme_location' => $value, 'container_class' => 'sub-nav', 'menu_class' => 'slick js-nav-resp-carousel', 'items_wrap' => '<div class="%2$s">%3$s</div>', 'walker' => new mintlink_walker_section_menu(), 'link_class' => 'sub-nav__link' ) ); ?>
@@ -39,10 +47,10 @@ foreach ($sections as $section) {
 
 
 	// layout based on section type
-	if ( $section_type === 'solutions') {
-		echo 'Solutions Menu';
-	} elseif ( $section_type === 'industries') {
-		echo 'Industries Menu';
+	if ( $section_type === 'solutions' ) {
+		wp_nav_menu( array( 'theme_location' => $section_type, 'container_class' => 'features', 'menu_class' => 'features__inner js-faded faded-out', 'items_wrap' => '<div class="%2$s">%3$s</div>', 'walker' => new mintlink_walker_solutions_menu(), 'link_class' => 'features__item' ) );
+	} elseif ( $section_type === 'industries' ) {
+		wp_nav_menu( array( 'theme_location' => $section_type, 'container' => false, 'menu_class' => 'carousel slick js-carousel', 'items_wrap' => '<div class="%2$s">%3$s</div>', 'walker' => new mintlink_walker_industries_menu(), 'link_class' => 'carousel__link' ) );
 	} else {
 ?>
 		<div class="<?php

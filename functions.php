@@ -100,10 +100,10 @@ add_action( 'admin_menu', 'remove_menus' );
 
 
 // remove 'menu-icon' styles
-function my_deregister_styles() {
-	wp_deregister_style( 'menu-icons-extra' );
-}
-add_action( 'wp_print_styles', 'my_deregister_styles', 100 );
+// function my_deregister_styles() {
+// 	wp_deregister_style( 'menu-icons-extra' );
+// }
+// add_action( 'wp_print_styles', 'my_deregister_styles', 100 );
 
 
 
@@ -204,7 +204,6 @@ class mintlink_walker_section_menu extends Walker_Nav_Menu {
 		preg_match($pattern, $item->url, $slug);
 
 		// svg file
-		// $svg = file_get_contents('icons/inline-core-processing.svg.php');
 		$svg = file_get_contents(locate_template('icons/'.$slug[0].'.svg'));
 
 	    // build html
@@ -230,7 +229,73 @@ class mintlink_walker_section_menu extends Walker_Nav_Menu {
 	    $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 	}
     function end_el(&$output, $item, $depth) {
-        $output .= "</div>";
+        $output .= '</div>';
+    }
+}
+// solutions nav (home)
+class mintlink_walker_solutions_menu extends Walker_Nav_Menu {
+
+	// strip classes and ids for li's and alter classes for links
+	 function start_el(  &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+	    global $wp_query;
+
+	    // slug
+		$pattern = '/(?<=\/)[^\/]*?(?=(\/(?!.))|(\?)|($))/'; // matches the last segment of the url
+		preg_match($pattern, $item->url, $slug);
+
+	    // build html
+	    $output .= '';
+
+	    // link attributes
+	    $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+	    $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+	    $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+	    $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+	    $attributes .= ! empty( $args->link_class ) ? ' class="'  . esc_attr( $args->link_class ) .'"' : '';
+
+	    $item_output = sprintf( '<a%1$s><div class="features__block"><img class="features__icon" src="'.get_template_directory_uri().'/img/home-icons/'.$slug[0].'.svg"><h2 class="features__heading">%2$s</h2><p class="features__text">'.$item->description.'</p></div></a>',
+	        $attributes,
+	        apply_filters( 'the_title', $item->title, $item->ID )
+	    );
+
+	    // build html
+	    $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+	}
+    function end_el(&$output, $item, $depth) {
+        $output .= '';
+    }
+}
+// industries nav (home)
+class mintlink_walker_industries_menu extends Walker_Nav_Menu {
+
+	// strip classes and ids for li's and alter classes for links
+	 function start_el(  &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+	    global $wp_query;
+
+	    // slug
+		$pattern = '/(?<=\/)[^\/]*?(?=(\/(?!.))|(\?)|($))/'; // matches the last segment of the url
+		preg_match($pattern, $item->url, $slug);
+
+	    // build html
+	    $output .= '<div class="carousel__item">';
+
+	    // link attributes
+	    $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+	    $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+	    $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+	    $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+	    $attributes .= ! empty( $args->link_class ) ? ' class="'  . esc_attr( $args->link_class ) .'"' : '';
+
+	    $item_output = sprintf( '<a%1$s><img class="carousel__img" src="http://www.fillmurray.com/g/461/300"><p class="carousel__text">%2$s</p></a>',
+	        $attributes,
+	        apply_filters( 'the_title', $item->title, $item->ID )
+	    );
+
+	    // build html
+	    $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+	}
+    function end_el(&$output, $item, $depth) {
+        $output .= '</div>';
     }
 }
 
