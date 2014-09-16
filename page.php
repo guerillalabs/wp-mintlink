@@ -18,7 +18,7 @@ get_header(); ?>
     	<!-- Site's Main Content-->
         <main class="site-main" role="main">
 
-                <?php get_template_part( 'partials/content', 'page' ); ?>
+                <?php get_template_part( 'partials/content' ); ?>
 
         </main><!-- #main -->
 

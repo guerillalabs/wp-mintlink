@@ -38,9 +38,9 @@ function mintlink_setup() {
 	remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 	remove_action('wp_head', 'parent_post_rel_link_wp_head', 10, 0);
 	remove_action('wp_head', 'wp_generator');
-	remove_action ('wp_head', 'rsd_link');
-	remove_action( 'wp_head', 'wlwmanifest_link');
-	remove_action( 'wp_head', 'wp_shortlink_wp_head');
+	remove_action('wp_head', 'rsd_link');
+	remove_action('wp_head', 'wlwmanifest_link');
+	remove_action('wp_head', 'wp_shortlink_wp_head');
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
@@ -56,33 +56,10 @@ function mintlink_setup() {
 		'primaryindustries' => __( 'Primary Menu - Industries', 'mintlink' ),
 		'primarycontact' => __( 'Primary Menu - Get in Touch', 'mintlink' ),
 		'footer' => __( 'Footer Menu', 'mintlink' ),
-		'section' => __( 'Section Menu', 'mintlink' ),
 		'solutions' => __( 'Solutions Menu', 'mintlink' ),
 		'industries' => __( 'Industries Menu', 'mintlink' ),
 		'contact' => __( 'Contact Menu', 'mintlink' )
 	) );
-
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
-	add_theme_support( 'html5', array(
-		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
-	) );
-
-	/*
-	 * Enable support for Post Formats.
-	 * See http://codex.wordpress.org/Post_Formats
-	 */
-	add_theme_support( 'post-formats', array(
-		'aside', 'image', 'video', 'quote', 'link',
-	) );
-
-	// Setup the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'mintlink_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
 }
 endif; // mintlink_setup
 add_action( 'after_setup_theme', 'mintlink_setup' );
@@ -299,31 +276,3 @@ function my_myme_types($mime_types){
 	return $mime_types;
 }
 add_filter('upload_mimes', 'my_myme_types', 1, 1);
-
-
-
-
-/**
- * Implement the Custom Header feature.
- */
-//require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/inc/extras.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/jetpack.php';
