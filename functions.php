@@ -98,15 +98,6 @@ add_action( 'admin_menu', 'remove_menus' );
 
 
 
-
-// remove 'menu-icon' styles
-// function my_deregister_styles() {
-// 	wp_deregister_style( 'menu-icons-extra' );
-// }
-// add_action( 'wp_print_styles', 'my_deregister_styles', 100 );
-
-
-
 /**
  * Register widget areas.
  *
