@@ -63,27 +63,6 @@ form {
 //
 // --------------------------------------------------------
 
-// any base styling on form headers
-.form__header {
-}
-
-
-
-
-//
-//   @field
-//--------------------------------------------------------
-//
-//  A field is an article that contains the input and anything
-//  related to the input.
-//
-//--------------------------------------------------------
-
-.field {
-  position: relative;
-}
-
-
 
 
 //
@@ -96,6 +75,7 @@ form {
 
 .field__input {
   margin-bottom: 20px;
+  position: relative;
 }
 
 
@@ -227,113 +207,58 @@ input:focus, textarea:focus {
 
 
 
+//
+//   @contact-form-7
+// ---------------------------------------------------------
 
-//
-//   @field__feedback
-// --------------------------------------------------------
-//
-//  Here's a little feedback
-//
-// --------------------------------------------------------
+// input error
+.wpcf7-not-valid {
+  background: #cf4d40;
+}
 
-.field__feedback {
-  display: none;
-  color: rgba(218, 35, 0, 0.6);
+// input error feedback
+.wpcf7-not-valid-tip {
+  background: color('black');
+  border-radius: 0 0 8px 8px;
+  color: color('white');
+  font-size: em(11);
+  left: 0;
+  margin-top: -11px;
+  padding: 4px 14px;
   position: absolute;
-  right: 0;
+  top: 100%;
+  width: 100%;
 }
 
-
-
-
-//
-//   @field__hint
-// --------------------------------------------------------
-//
-//  hints
-//
-// --------------------------------------------------------
-
-.field__hint {
-  color: rgba(218, 35, 0, 0.6);
+// contact form messages
+.wpcf7-display-none {
   display: none;
-  position: absolute;
+}
+.wpcf7-response-output {
+  background: #cf4d40;
+  border-top: 1px solid color('white');
+  bottom: 0;
+  color: $body-color;
+  font-size: em(14);
+  left: 0;
+  margin: 0;
+  padding: em(20);
+  position: fixed;
+  text-align: center;
+  text-transform: uppercase;
   right: 0;
+  z-index: 100;
 }
+.wpcf7-mail-sent-ok { background: color('green'); }
 
-
-
-
-//
-//   @error-states
-// --------------------------------------------------------
-//
-//  .field.is-error
-//
-// --------------------------------------------------------
-
-.field.is-error {
-  .field__feedback {
-    display: block;
-  }
-  input {
-    border: 1px solid rgba(218, 35, 0, 0.3);
-  }
-}
-
-
-
-
-//
-//   @field__input--list
-// --------------------------------------------------------
-//
-//  block list containing radio labels
-//
-// --------------------------------------------------------
-
-.field__input--list {
-  display: block;
+// screen reader response
+.wpcf7 .screen-reader-response {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  width: 1px;
   margin: 0;
   padding: 0;
-  li {
-    display: block;
-    list-style-type: none;
-  }
-}
-
-
-
-
-//
-//   @action
-// ---------------------------------------------------------
-//
-//   Each form has an action section at the bottom to
-//   submit the form
-//
-// ---------------------------------------------------------
-
-.action {
-}
-
-
-
-
-//
-//   TYPES OF FORMS
-//
-//   @form--search
-// ---------------------------------------------------------
-
-.form--search {
-  width: 7.2em;
-  input[type=search] {
-    background-size: auto 60%;
-    background-repeat: no-repeat;
-    background-position: 5% 50%;
-    border-radius: .625em;
-    padding: .44em .3125em .35em 1.75em;
-    @extend %text-xs;
-  }
+  border: 0;
 }

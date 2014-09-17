@@ -1,62 +1,31 @@
         <!-- Site's Main Footer-->
         <footer role="contentinfo">
 
-          <div class="site-footer section--full" data-bottom-top="background-position: 0% 0%;" data-top-bottom="background-position: 0% 100%;">
-
-            <div class="section--full__inner-wide">
-              <div class="grid">
-                <div class="grid__item one-whole medium--one-third large--one-third">
-                  <div class="field__input">
-                    <input type="text" placeholder="First Name">
-                  </div>
-                  <div class="field__input">
-                    <input type="text" placeholder="Last Name">
-                  </div>
-                  <div class="field__input">
-                    <input type="email" placeholder="Email Address">
-                  </div>
-                  <div class="field__input">
-                    <input type="tel" placeholder="Phone Number">
-                  </div>
-                </div><!--
-
-                --><div class="grid__item one-whole medium--one-third large--one-third">
-                    <div class="field__input">
-                      <input type="text" placeholder="State">
-                    </div>
-                    <div class="field__input">
-                      <input type="tel" placeholder="Postal Code">
-                    </div>
-                    <div class="field__input">
-                      <input type="text" placeholder="Country">
-                    </div>
-                    <div class="field__input">
-                      <input type="text" placeholder="Company Name">
-                    </div>
-                </div><!--
-
-                --><div class="grid__item one-whole medium--one-third large--one-third">
-                    <div class="field__input">
-                      <textarea placeholder="Notes" rows="9"></textarea>
-                    </div>
-                    <div class="field__input">
-                      <button class="btn btn--outline btn--block" type="submit">Submit</button>
-                    </div>
-                </div>
-              </div><!-- /grid three-up -->
-
-            </div><!-- /section--full__inner-wide -->
-          </div><!-- /section--full -->
-
-
-
           <!-- contact page footers -->
-          <?php if ( is_page( 'contact' ) ): ?>
-            <?php dynamic_sidebar( 'sidebar-contact' ); ?>
-          <?php elseif ( is_page( 'partner' ) ): ?>
+          <?php if ( is_page( 'partner' ) ): ?>
+            <?php
+            $contactform = do_shortcode( '[contact-form-7 id="166" title="Partner Page Form"]' );
+            $pattern = '/(<\/div>)\s*(<div class="grid__item)/'; // matches the last segment of the url
+            $replacement = '$1$2';
+            echo preg_replace($pattern, $replacement, $contactform);
+            ?>
             <?php dynamic_sidebar( 'sidebar-partner' ); ?>
           <?php elseif ( is_page( 'support' ) ): ?>
+            <?php
+            $contactform = do_shortcode( '[contact-form-7 id="167" title="Support Page Form"]' );
+            $pattern = '/(<\/div>)\s*(<div class="grid__item)/'; // matches the last segment of the url
+            $replacement = '$1$2';
+            echo preg_replace($pattern, $replacement, $contactform);
+            ?>
             <?php dynamic_sidebar( 'sidebar-support' ); ?>
+          <?php else: ?>
+            <?php
+            $contactform = do_shortcode( '[contact-form-7 id="164" title="Contact Page Form"]' );
+            $pattern = '/(<\/div>)\s*(<div class="grid__item)/'; // matches the last segment of the url
+            $replacement = '$1$2';
+            echo preg_replace($pattern, $replacement, $contactform);
+            ?>
+            <?php dynamic_sidebar( 'sidebar-contact' ); ?>
           <?php endif; ?>
 
 

@@ -114,6 +114,16 @@ add_action( 'widgets_init', 'mintlink_widgets_init' );
 
 
 
+
+// remove 'menu-icon' styles
+function my_deregister_styles() {
+	wp_deregister_style( 'contact-form-7' );
+}
+add_action( 'wp_print_styles', 'my_deregister_styles', 100 );
+
+
+
+
 /**
  * Enqueue scripts and styles.
  */
