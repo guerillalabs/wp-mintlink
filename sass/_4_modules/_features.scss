@@ -21,6 +21,11 @@
 .features__item {
     padding: 60px;
     text-align: center;
+    text-decoration: none;
+
+    &:hover {
+        opacity: 1;
+    }
 
     @include media('screen and #{map-get($breakpoints, "medium")}', $no-query-fallback: true) {
         display: table-cell;

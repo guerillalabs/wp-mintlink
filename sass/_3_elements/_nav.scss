@@ -202,6 +202,7 @@ body {
   left: 100%;
   top: 0;
   width: 240px;
+  transform: translateZ(0);
 
   @include media('screen and #{map-get($breakpoints, "medium")}', $no-query-fallback: true) {
     width: 315px;

@@ -12,7 +12,7 @@
 	<?php if ( CFS()->get('content_description') ) : ?><div class="section--full__text"><?php echo CFS()->get('content_description'); ?></div><?php endif; ?>
 </div>
 
-<div class="section--full section--full--grey-bg">
+<div class="section--full section--full--content section--full--border--bottom">
     <div class="section--full__inner-wide">
         <div class="section-int__text section-int__text--full">
             <?php the_content(); ?>
