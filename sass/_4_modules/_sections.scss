@@ -88,18 +88,6 @@
 .section-int__text--full {
     float: none;
     max-width: none;
-
-    > ul, > ol {
-        margin-bottom: 40px;
-    }
-    ul {
-        list-style: disc;
-        margin-left: $gutter;
-    }
-    ol {
-        list-style: decimal;
-        margin-left: $gutter;
-    }
 }
 
 
@@ -154,11 +142,20 @@
 }
 .section-int__text, .section--full__text {
     p {
-        @extend %psl--18--grey;
         margin-bottom: 40px;
     }
     ul, ol {
-        @extend %psl--18--grey;
+        margin-bottom: 40px;
+        margin-left: $gutter;
+    }
+    ul {
+        list-style: disc;
+    }
+    ol {
+        list-style: decimal;
+    }
+    & :last-child {
+        margin-bottom: 0;
     }
 }
 

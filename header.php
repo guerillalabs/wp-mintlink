@@ -78,7 +78,7 @@
         </li>
     </ul>
 
-    <a class="primary-nav__btn" href="https://www.mymerchantdata.com/6_ms_login2.aspx"><img class="primary-nav__icon" src="<?php echo get_template_directory_uri(); ?>/img/off-canvas-icons/member-login.svg">Membership Login</a>
+    <a class="primary-nav__btn" href="https://www.mymerchantdata.com/6_ms_login2.aspx" target="_blank"><img class="primary-nav__icon" src="<?php echo get_template_directory_uri(); ?>/img/off-canvas-icons/member-login.svg">Membership Login</a>
 </div>
 
 <div class="page-frame js-page-frame" id="top">
