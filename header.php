@@ -61,20 +61,28 @@
     <ul>
         <li><a class="primary-nav__section primary-nav__section--link" href="/"><img class="primary-nav__icon" src="<?php echo get_template_directory_uri(); ?>/img/off-canvas-icons/home.svg">Home</a></li>
         <li>
-            <span class="primary-nav__section"><img class="primary-nav__icon" src="<?php echo get_template_directory_uri(); ?>/img/off-canvas-icons/who-we-are.svg">Who We Are</span>
-            <?php wp_nav_menu( array( 'theme_location' => 'primarywho', 'container' => false, 'menu_class' => 'primary-nav__level-two', 'items_wrap' => '<ul class="%2$s">%3$s</ul>', 'walker' => new mintlink_walker_simple_menu(), 'link_class' => 'primary-nav__link' ) ); ?>
+            <a class="primary-nav__section primary-nav__section--link" href="/who-we-are/"><img class="primary-nav__icon" src="<?php echo get_template_directory_uri(); ?>/img/off-canvas-icons/who-we-are.svg">Who We Are</a>
+            <?php if ( has_nav_menu( 'primarywho' ) ) {
+                wp_nav_menu( array( 'theme_location' => 'primarywho', 'container' => false, 'menu_class' => 'primary-nav__level-two', 'items_wrap' => '<ul class="%2$s">%3$s</ul>', 'walker' => new mintlink_walker_simple_menu(), 'link_class' => 'primary-nav__link' ) );
+            } ?>
         </li>
         <li>
             <span class="primary-nav__section"><img class="primary-nav__icon" src="<?php echo get_template_directory_uri(); ?>/img/off-canvas-icons/solutions.svg">Solutions</span>
-            <?php wp_nav_menu( array( 'theme_location' => 'primarysolutions', 'container' => false, 'menu_class' => 'primary-nav__level-two', 'items_wrap' => '<ul class="%2$s">%3$s</ul>', 'walker' => new mintlink_walker_simple_menu(), 'link_class' => 'primary-nav__link' ) ); ?>
+            <?php if ( has_nav_menu( 'primarysolutions' ) ) {
+                wp_nav_menu( array( 'theme_location' => 'primarysolutions', 'container' => false, 'menu_class' => 'primary-nav__level-two', 'items_wrap' => '<ul class="%2$s">%3$s</ul>', 'walker' => new mintlink_walker_simple_menu(), 'link_class' => 'primary-nav__link' ) );
+            } ?>
         </li>
         <li>
             <span class="primary-nav__section"><img class="primary-nav__icon" src="<?php echo get_template_directory_uri(); ?>/img/off-canvas-icons/industries.svg">Industries</span>
-            <?php wp_nav_menu( array( 'theme_location' => 'primaryindustries', 'container' => false, 'menu_class' => 'primary-nav__level-two', 'items_wrap' => '<ul class="%2$s">%3$s</ul>', 'walker' => new mintlink_walker_simple_menu(), 'link_class' => 'primary-nav__link' ) ); ?>
+            <?php if ( has_nav_menu( 'primaryindustries' ) ) {
+                wp_nav_menu( array( 'theme_location' => 'primaryindustries', 'container' => false, 'menu_class' => 'primary-nav__level-two', 'items_wrap' => '<ul class="%2$s">%3$s</ul>', 'walker' => new mintlink_walker_simple_menu(), 'link_class' => 'primary-nav__link' ) );
+            } ?>
         </li>
         <li>
             <span class="primary-nav__section"><img class="primary-nav__icon" src="<?php echo get_template_directory_uri(); ?>/img/off-canvas-icons/get-in-touch.svg">Get in Touch</span>
-            <?php wp_nav_menu( array( 'theme_location' => 'primarycontact', 'container' => false, 'menu_class' => 'primary-nav__level-two', 'items_wrap' => '<ul class="%2$s">%3$s</ul>', 'walker' => new mintlink_walker_simple_menu(), 'link_class' => 'primary-nav__link' ) ); ?>
+            <?php if ( has_nav_menu( 'primarycontact' ) ) {
+                wp_nav_menu( array( 'theme_location' => 'primarycontact', 'container' => false, 'menu_class' => 'primary-nav__level-two', 'items_wrap' => '<ul class="%2$s">%3$s</ul>', 'walker' => new mintlink_walker_simple_menu(), 'link_class' => 'primary-nav__link' ) );
+            } ?>
         </li>
     </ul>
 
