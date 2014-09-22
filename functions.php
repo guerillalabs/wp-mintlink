@@ -5,13 +5,6 @@
  * @package mintlink
  */
 
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) ) {
-	$content_width = 640; /* pixels */
-}
-
 if ( ! function_exists( 'mintlink_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.

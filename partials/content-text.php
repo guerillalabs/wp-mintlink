@@ -14,7 +14,7 @@
     </div>
 </div>
 
-<div class="section--full section--full--content section--full--border--bottom">
+<div class="section--full section--full--content">
     <div class="section--full__inner-wide">
         <div class="section-int__text section-int__text--full">
             <?php the_content(); ?>
@@ -22,7 +22,7 @@
     </div>
 </div>
 
-<div class="section--centered js-faded faded-out">
+<div class="section--centered js-faded faded-out section--full--border">
     <h2 class="section--full__heading">Get in Touch</h2>
     <h3 class="section--full__tagline">Ready to Learn More?</h3>
     <p class="section--full__desc">Let us make things simpler.</p>
