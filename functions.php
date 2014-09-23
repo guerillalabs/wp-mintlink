@@ -247,6 +247,9 @@ class mintlink_walker_industries_menu extends Walker_Nav_Menu {
 		$pattern = '/(?<=\/)[^\/]*?(?=(\/(?!.))|(\?)|($))/'; // matches the last segment of the url
 		preg_match($pattern, $item->url, $slug);
 
+		// upload directory
+		$upload_dir = wp_upload_dir();
+
 	    // build html
 	    $output .= '<div class="carousel__item">';
 
@@ -257,7 +260,7 @@ class mintlink_walker_industries_menu extends Walker_Nav_Menu {
 	    $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
 	    $attributes .= ! empty( $args->link_class ) ? ' class="'  . esc_attr( $args->link_class ) .'"' : '';
 
-	    $item_output = sprintf( '<a%1$s><img class="carousel__img" src="http://www.fillmurray.com/g/461/300"><p class="carousel__text">%2$s</p></a>',
+	    $item_output = sprintf( '<a%1$s><img class="carousel__img" src="'.$upload_dir['baseurl'].'/carousel-'.$slug[0].'.jpg"><p class="carousel__text">%2$s</p></a>',
 	        $attributes,
 	        apply_filters( 'the_title', $item->title, $item->ID )
 	    );
