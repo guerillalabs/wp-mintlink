@@ -3,8 +3,9 @@
     position: relative;
 }
 .carousel__link {
-    &:hover:before {
-        background: url(#{$baseurl}img/carousel-hover.png);
+    transition: none;
+    &:hover:after {
+        background: rgba(color('green'), .7);
         content: '';
         display:block;
         height: 100%;
@@ -12,13 +13,18 @@
         position: absolute;
         top: 0;
         width: 100%;
+        z-index: 5;
+
+        .lte-ie8 & {
+            background: url(#{$baseurl}img/carousel-hover.png);
+        }
     }
 }
 .carousel__text {
     @extend %sans-light;
 
-    border-bottom: 1px solid color('white');
     border-top: 1px solid color('white');
+    border-bottom: 1px solid color('white');
     color: color('white');
     font-size: 21px;
     left: 50%;
@@ -26,7 +32,8 @@
     position: absolute;
     text-transform: uppercase;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -49%);
+    z-index: 10;
 
     .lte-ie8 & {
         left: 42px;
@@ -36,7 +43,7 @@
     }
 }
 .carousel__img {
-    opacity: 0.25;
+    // opacity: 0.25;
 }
 
 

@@ -19,7 +19,7 @@
 .section--full {
     @extend %clearfix;
 
-    padding: 100px 25px 110px;
+    padding: 0 25px;
 
     &--content {
         padding-top: 0;
@@ -29,12 +29,14 @@
 .section--full__inner {
     margin: 0 auto;
     max-width: 800px;
+    padding: 100px 0 110px;
     text-align: center;
 }
 
 .section--full__inner-wide {
     margin: 0 auto;
     max-width: 970px;
+    padding: 100px 0 110px;
 }
 
 .section--full__heading {

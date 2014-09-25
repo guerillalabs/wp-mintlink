@@ -57,6 +57,11 @@ foreach ($sections as $section) {
 		// regular vs. centered classes
 		if ( $section_type === 'centered' ) {
 			echo 'section--centered js-faded faded-out';
+
+			// border classes for centered sections
+			foreach ($border_color as $value => $label) {
+				echo ' '.$value;
+			}
 		} else {
 			echo 'section--full';
 
@@ -66,16 +71,17 @@ foreach ($sections as $section) {
 			}
 		}
 
-		// border classes
-		foreach ($border_color as $value => $label) {
-			echo ' '.$value;
-		}
 		?>">
 			<?php
 			// inner divs
 			if ( $section_type === 'centered' || $section_type === 'regular' ) { // regular and centered sections
 				if ( $section_type === 'regular' ) {
-					echo '<div class="section--full__inner js-faded faded-out">';
+					echo '<div class="section--full__inner js-faded faded-out';
+					// border classes
+					foreach ($border_color as $value => $label) {
+						echo ' '.$value;
+					}
+					echo '">';
 				}
 			?>
 				    <?php if ( $section_heading ) : ?><h2 class="section--full__heading"><?php echo $section_heading; ?></h2><?php endif; ?>
@@ -87,7 +93,12 @@ foreach ($sections as $section) {
 				}
 			} else { // image sections
 			?>
-			    <div class="section--full__inner-wide">
+			    <div class="section--full__inner-wide<?php
+			    	// border classes
+					foreach ($border_color as $value => $label) {
+						echo ' '.$value;
+					}
+			    ?>">
 			        <div class="section-int__text <?php if ( $section_image_position === 'left' ) : ?>section-int__text--alt js-section-right faded-out-right<?php else: ?> js-section-left faded-out-left<?php endif; ?>">
 			        	<?php if ( $section_heading ) : ?><h2 class="section--full__heading"><?php echo $section_heading; ?></h2><?php endif; ?>
 					    <?php if ( $section_tagline ) : ?><h3 class="section-int__headline"><?php echo $section_tagline; ?></h3><?php endif; ?>

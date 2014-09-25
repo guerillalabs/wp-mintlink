@@ -108,7 +108,7 @@ add_action( 'widgets_init', 'mintlink_widgets_init' );
 
 
 
-// remove 'menu-icon' styles
+// remove 'contact-form-7' styles
 function my_deregister_styles() {
 	wp_deregister_style( 'contact-form-7' );
 }
@@ -171,7 +171,7 @@ class mintlink_walker_section_menu extends Walker_Nav_Menu {
 	    $active_class = in_array("current_page_item",$item->classes) ? ' is_active' : '';
 
 	    // slug
-		$pattern = '/(?<=\/)[^\/]*?(?=(\/(?!.))|(\?)|($))/'; // matches the last segment of the url
+		$pattern = '/(?<=\/)[^\/]*?(?=(\/(?!.))|(\?)|(#)|($))/'; // matches the last segment of the url
 		preg_match($pattern, $item->url, $slug);
 
 		// svg file
@@ -211,7 +211,7 @@ class mintlink_walker_solutions_menu extends Walker_Nav_Menu {
 	    global $wp_query;
 
 	    // slug
-		$pattern = '/(?<=\/)[^\/]*?(?=(\/(?!.))|(\?)|($))/'; // matches the last segment of the url
+		$pattern = '/(?<=\/)[^\/]*?(?=(\/(?!.))|(\?)|(#)|($))/'; // matches the last segment of the url
 		preg_match($pattern, $item->url, $slug);
 
 	    // build html
@@ -244,7 +244,7 @@ class mintlink_walker_industries_menu extends Walker_Nav_Menu {
 	    global $wp_query;
 
 	    // slug
-		$pattern = '/(?<=\/)[^\/]*?(?=(\/(?!.))|(\?)|($))/'; // matches the last segment of the url
+		$pattern = '/(?<=\/)[^\/]*?(?=(\/(?!.))|(\?)|(#)|($))/'; // matches the last segment of the url
 		preg_match($pattern, $item->url, $slug);
 
 		// upload directory
