@@ -32,8 +32,13 @@
     padding: 100px 0 110px;
     text-align: center;
 }
+.section--full__inner--bottom {
+    padding-bottom: 0;
+}
 
 .section--full__inner-wide {
+    @extend %clearfix;
+
     margin: 0 auto;
     max-width: 970px;
     padding: 100px 0 110px;

@@ -7,7 +7,7 @@
 ?>
 
 <div class="section--full">
-    <div class="section--full__inner js-faded faded-out">
+    <div class="section--full__inner section--full__inner--bottom js-faded faded-out">
     	<?php if ( CFS()->get('content_heading') ) : ?><h2 class="section--full__heading"><?php echo CFS()->get('content_heading'); ?></h2><?php endif; ?>
     	<?php if ( CFS()->get('content_tagline') ) : ?><h3 class="section--full__tagline"><?php echo CFS()->get('content_tagline'); ?></h3><?php endif; ?>
     	<?php if ( CFS()->get('content_description') ) : ?><div class="section--full__text"><?php echo CFS()->get('content_description'); ?></div><?php endif; ?>
