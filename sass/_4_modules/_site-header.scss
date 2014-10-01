@@ -27,7 +27,12 @@
 .site-header--gradient {
   background: #00b18f;
   background: linear-gradient(to right, #00b18f, #a0d7b3);
-  border-bottom: 14px solid color('green');
+}
+
+.site-header__border {
+  background: color('green');
+  height: 14px;
+  width: 100%;
 }
 
 

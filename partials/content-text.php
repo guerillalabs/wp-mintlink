@@ -5,6 +5,7 @@
  * @package mintlink
  */
 ?>
+<div class="site-header__border"></div>
 
 <div class="section--full">
     <div class="section--full__inner section--full__inner--bottom js-faded faded-out">

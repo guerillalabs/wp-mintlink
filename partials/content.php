@@ -15,10 +15,14 @@ foreach ($section_menu as $value => $label) {
 		<div class="sub-nav-wrap">
 			<?php wp_nav_menu( array( 'theme_location' => $value, 'container_class' => 'sub-nav', 'menu_class' => 'slick js-nav3-resp-carousel', 'items_wrap' => '<div class="%2$s">%3$s</div>', 'walker' => new mintlink_walker_section_menu(), 'link_class' => 'sub-nav__link' ) ); ?>
 		</div>
-
 <?php
 	}
-	elseif ($value !== 'none') {
+	elseif ($value === 'none') {
+?>
+		<div class="site-header__border"></div>
+<?php
+	}
+	else {
 ?>
 		<div class="sub-nav-wrap">
 			<?php wp_nav_menu( array( 'theme_location' => $value, 'container_class' => 'sub-nav', 'menu_class' => 'slick js-nav-resp-carousel', 'items_wrap' => '<div class="%2$s">%3$s</div>', 'walker' => new mintlink_walker_section_menu(), 'link_class' => 'sub-nav__link' ) ); ?>
