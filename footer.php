@@ -47,10 +47,10 @@
 
               <nav class="site-nav--footer--sub">
                 <span class="social">
-                  <a class="site-nav--footer--sub__link" href=""><img src="<?php echo get_template_directory_uri(); ?>/img/social-icons/google-plus.svg" target="_blank"></a>
+                  <a class="site-nav--footer--sub__link" href="https://plus.google.com/u/7/102694506422224377968/about?hl=en"><img src="<?php echo get_template_directory_uri(); ?>/img/social-icons/google-plus.svg" target="_blank"></a>
                   <a class="site-nav--footer--sub__link" href="https://twitter.com/_MintLink" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/social-icons/twitter.svg"></a>
-                  <a class="site-nav--footer--sub__link" href="" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/social-icons/facebook.svg"></a>
-                  <a class="site-nav--footer--sub__link" href="" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/social-icons/linked-in.svg"></a>
+                  <a class="site-nav--footer--sub__link" href="https://www.facebook.com/pages/MintLink-llc/283935118445266" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/social-icons/facebook.svg"></a>
+                  <a class="site-nav--footer--sub__link" href="https://www.linkedin.com/company/mintlink-solutions" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/social-icons/linked-in.svg"></a>
                 </span>
                 <a class="btn btn--small btn--outline btn--outline--green" href="https://www.mymerchantdata.com/6_ms_login2.aspx" target="_blank">Member Login</a>
               </nav>
