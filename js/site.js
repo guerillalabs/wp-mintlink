@@ -160,16 +160,23 @@ var Site = {
         if(!$('.js-nav-resp-carousel').length) return;
 
         var _this = this,
-            $nav_resp_carousel = $('.js-nav-resp-carousel');
+            $nav_resp_carousel = $('.js-nav-resp-carousel'),
+            $active_nav = $nav_resp_carousel.find('a.is_active').closest('.sub-nav__item'),
+            active_index = $nav_resp_carousel.find('.sub-nav__item').index($active_nav);
 
         $nav_resp_carousel.slick(this.nav_carousel_opts);
 
-        // move back to first frame
-        Constants.$window.on('resize', function(){
-            if(Constants.$window.width() > Constants.BREAKPOINTS.MEDIUM) {
-                $nav_resp_carousel.slickGoTo(0);
-            }
-        });
+        // initial scroll to the active page
+        $nav_resp_carousel.slickSetOption('speed', 0);
+        $nav_resp_carousel.slickGoTo( active_index - (active_index % $nav_resp_carousel.slickGetOption('slidesToShow')) );
+        $nav_resp_carousel.slickSetOption('speed', this.nav_carousel_opts.speed);
+
+        // keep at current frame
+        // Constants.$window.on('resize', function(){
+        //     if(Constants.$window.width() > Constants.BREAKPOINTS.MEDIUM) {
+        //         $nav_resp_carousel.slickGoTo(0);
+        //     }
+        // });
     },
 
     nav3CarouselResp: function(){
