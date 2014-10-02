@@ -35,6 +35,8 @@ var Site = {
         if( !(Platform.IOS() || Platform.IE8() || Platform.IE9()) ){
             Site.showVisibleSections();
             Site.scrollAnimate();
+        } else {
+            Site.cancelAnimate();
         }
 
         // Browser that don't support SVG
@@ -252,6 +254,10 @@ var Site = {
         $('.js-header-faded').one('animationend webkitAnimationEnd MSAnimationEnd', function() {
             _this._animateSections();
         });
+    },
+
+    cancelAnimate: function(){
+        $('.faded, .faded-out, .faded-out-left, .faded-out-right').removeClass('faded faded-out faded-out-left faded-out-right');
     }
 };
 
